@@ -1,0 +1,204 @@
+@import "reset.scss";
+@import "variables.scss";
+@import "mixins.scss";
+@import "keyframes.scss";
+@import "mediaquery.scss";
+
+.card {
+  height: 280px;
+  width: 730px;
+  border-radius: 10px;
+  display: flex;
+
+  img {
+    width: 285px;
+    height: 280px;
+    border-radius: 10px 0 0 10px;
+  }
+
+  .text {
+    height: 280px;
+    width: 445px;
+    background-color: hsl(0, 0%, 100%);
+    border-radius: 0 10px 10px 0;
+    padding: 30px 41px;
+
+    h2 {
+      color: $veryDarkGrayishBlue;
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    p {
+      color: $desaturatedDarkBlue;
+      font-size: 13px;
+      font-size: 13.4px;
+      font-weight: 500;
+      line-height: 1.5;
+      margin-bottom: 33px;
+    }
+
+    .avatar {
+      display: flex;
+      align-items: center;
+
+      img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+      }
+
+      .avatar-info {
+        margin-left: 20px;
+        margin-right: auto;
+
+        p {
+          margin-bottom: 0px;
+          &:nth-child(1) {
+            color: $veryDarkGrayishBlue;
+          }
+        }
+      }
+
+      button {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        background-color: $lightGrayishBlue;
+        border: 0;
+        cursor: pointer;
+
+        @include center();
+
+        z-index: 1;
+      }
+    }
+  }
+}
+
+.share-clicked {
+  width: 248px;
+  height: 55px;
+  border-radius: 5px;
+  background-color: $veryDarkGrayishBlue;
+
+  transform: translateX(307px) translateY(32px);
+
+  opacity: 0;
+  pointer-events: none;
+
+  .icons {
+    width: 248px;
+    height: 55px;
+    border-radius: 5px;
+
+    @include center();
+
+    span {
+      margin-right: 22px;
+      margin-left: 15px;
+      color: $grayishBlue;
+      letter-spacing: 4px;
+      cursor: default;
+      font-size: 13.4px;
+    }
+
+    .icon-pics {
+      display: flex;
+      align-items: center;
+
+      a {
+        margin-right: 17px;
+        height: 20px;
+      }
+    }
+  }
+
+  span {
+    &:nth-child(2) {
+      display: block;
+      width: 22px;
+      border-top: 12px solid $veryDarkGrayishBlue;
+      border-left: 12px solid transparent;
+      border-right: 12px solid transparent;
+      margin-left: 113px;
+      transform: translateY(-1px);
+    }
+  }
+}
+
+.wrapper {
+  height: 800px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 375px) or (orientation: portrait) {
+  .container {
+    height: 667px;
+    width: 375px;
+  }
+
+  .card {
+    height: 521px;
+    width: 327px;
+    flex-direction: column;
+
+    img {
+      width: 327px;
+      height: 200px;
+      border-radius: 10px 10px 0 0;
+    }
+
+    .text {
+      height: 312px;
+      width: 327px;
+      padding: 31px;
+      border-radius: 0 0 10px 10px;
+
+      h2 {
+        font-size: 17px;
+        font-weight: 700;
+        margin-bottom: 20px;
+      }
+
+      p {
+        font-size: 13.4px;
+        font-weight: 500;
+        line-height: 1.5;
+        margin-bottom: 33px;
+      }
+
+      img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+      }
+    }
+  }
+
+  .share-clicked {
+    height: 64px;
+    width: 327px;
+    transform: translateX(0px) translateY(153px);
+    border-radius: 0 0 10px 10px;
+
+    .icons {
+      height: 64px;
+      width: 327px;
+
+      justify-content: start;
+    }
+
+    span:nth-child(2) {
+      display: none;
+    }
+  }
+}
